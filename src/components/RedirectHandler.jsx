@@ -13,13 +13,13 @@ const RedirectHandler = () => {
         if (error) throw error;
 
         if (session) {
-          navigate('https://ai-docs-five.vercel.app/dashboard');
+          navigate('/dashboard');
         } else {
-          navigate('https://ai-docs-five.vercel.app/login');
+          navigate('/login');
         }
       } catch (error) {
         console.error('Error handling redirect:', error);
-        navigate('https://ai-docs-five.vercel.app/login');
+        navigate('/login');
       }
     };
 
