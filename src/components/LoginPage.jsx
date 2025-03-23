@@ -250,7 +250,7 @@ const LoginPage = () => {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider,
         options: {
-          redirectTo: 'https://upldjxisrxoiyyurfttj.supabase.co/auth/v1/callback',
+          redirectTo: 'https://ai-docs-five.vercel.app/dashboard',
           scopes: provider === 'github' ? 'repo user' : ''
         }
       });
