@@ -1,13 +1,20 @@
 import React from 'react';
 import PricingSection from './PricingSection';
 import EarlyAccessForm from './EarlyAccessForm';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   const scrollToEarlyAccess = () => {
     document.getElementById('early-access').scrollIntoView({ 
       behavior: 'smooth',
       block: 'start'
     });
+  };
+
+  const handleNpmClick = () => {
+    navigate('/login');
   };
 
   return (
@@ -32,7 +39,7 @@ const HomePage = () => {
               <span className="text-yellow-400">repository</span>);
             </p>
             <button 
-              onClick={scrollToEarlyAccess}
+              onClick={handleNpmClick}
               className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold 
                        hover:bg-blue-700 transition-all duration-300 transform 
                        hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 
@@ -40,12 +47,12 @@ const HomePage = () => {
             >
               <span>npm install @ai-docs/cli</span>
               <svg 
-                className="w-4 h-4 transform group-hover:translate-y-1 transition-transform" 
+                className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
