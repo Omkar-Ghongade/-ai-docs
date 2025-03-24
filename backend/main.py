@@ -167,6 +167,10 @@ def generate_documentation(repositoryUrl: str, userEmail: str):
     except Exception as e:
         print(f"Error occurred: {e}")
         return {"status": "error", "message": str(e)}
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello World"}
         
 if __name__ == "__main__":
     import uvicorn
